@@ -1,0 +1,450 @@
+<!doctype html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+ <title>Quiz Page</title>
+ <!-- google font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet">
+  <link rel="icon" href="img/Logo project 1.png" type="image/svg+xml">
+ <!-- aos  -->
+ <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <!-- style -->
+ <style>
+  * {
+   font-family: 'Montserrat', sans-serif;
+  }
+ </style>
+ <!-- tailwand -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+  tailwind.config = {
+   theme: {
+    extend: {
+     colors: {
+      clifford: '#da373d',
+     }
+    }
+   }
+  }
+ </script>
+ <!-- css -->
+ <style type="text/tailwindcss">
+  @layer components {
+   .nav-item {
+    @apply transition text-black hover:text-[#00DDB5] lg:text-2xl text-xl 
+   }
+   /* .point-green {
+     @apply  bg-[#00E909] h-[46px] w-[48px] transition hover:bg-green-400 rounded-[100px] cursor-pointer shadow-2xl
+   } */
+   .point-blue {
+     @apply  bg-[#3333CB] h-[46px] w-[48px] transition hover:bg-[#00DDB5] rounded-[100px] cursor-pointer shadow-2xl
+   }
+   /* .point-red {
+     @apply  bg-red-600 h-[46px] w-[48px] transition hover:bg-red-500 rounded-[100px] cursor-pointer shadow-2xl
+   } */
+   /* .point-white {
+     @apply  bg-white h-[46px] w-[48px] transition hover:bg-gray-200 rounded-[100px] cursor-pointer shadow-2xl
+   } */
+   .btn-answer {
+    @apply border border-4 bg-[#00DDB5] text-[30px] px-20 py-10 shadow-2xl transition hover:shadow-xl hover:bg-[#FFC41D] hover:text-white rounded-[40px] text-white font-bold hover:!scale-105
+   }
+  }
+  @media (max-width: 767px) {
+    /* Styles for smaller screens */
+    #menu.hidden {
+      display: none;
+    }
+    #menu.flex-col {
+      flex-direction: column;
+    }
+  }
+  body {
+    zoom: 70%; /* Adjust the zoom level as needed */
+    transform-origin: top center; /* Set the origin for the zoom */
+  }
+  audio { display:none;}
+</style>
+<audio controls autoplay loop>
+  <source src="src/audio/SB Music- Grass Skirt Chase.mp3" type="audio/mpeg">
+</audio>
+</head>
+
+
+<body>
+  <header class="bg-white shadow-2xl fixed w-full z-20 px-4" data-aos="fade-down">
+    <nav class="flex flex-col lg:flex-row justify-between items-center container mx-auto p-4">
+      <div>
+        <a href="index.html">
+          <img src="img/Logo project 1.png" alt="logo" class="h-24">
+        </a>
+      </div>
+      <div class="flex items-center">
+        <button id="hamburger-button" class="lg:hidden inline-flex items-center justify-center p-3 rounded-md text-gray-400 hover:text-white hover:bg-[#3333CB] focus:outline-none focus:bg-white focus:text-black" aria-expanded="false" aria-haspopup="true" onclick="toggleMenu()">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+  
+        <ul id="menu" class="hidden lg:flex items-center flex-col lg:flex-row gap-8 font-bold ml-0 lg:ml-12">
+          <li class="py-2 lg:py-0"><a href="index.html" class="nav-item">HOME</a></li>
+          <li class="py-2 lg:py-0"><a href="index.html#about-us" class="nav-item">ABOUT US</a></li>
+          <li class="py-2 lg:py-0"><a href="index.html#contact-us" class="nav-item">CONTACT US</a></li>
+          <li class="py-2 lg:py-0">
+            <a href="quiz.html">
+              <button style="text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);" class="bg-[#3333CB] text-white px-8 py-4 rounded-2xl font-bold text-2xl transition hover:bg-[#00DDB5] hover:text-white">
+                PLAY
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <br>
+  <br>
+  
+  <main>
+    <!-- game -->
+    <section class="shadow-2xl min-h-[400px] rounded-b-[100px] px-4">
+      <div class="container mx-auto lg:pt-56 pt-72">
+        <!-- point -->
+        <div class="flex gap-2 justify-evenly">
+          <div data-aos="zoom-in" data-aos-delay="" class="point-blue">
+            <img src="img/1692355525434.png" alt="" class="image-A -mt-24 -ml-8 min-w-[100px] animate-bounce" style="margin-left: -27px;">
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="100" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="200" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="300" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="400" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="500" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="600" class="point-blue">
+            <img src="img/1692355525473.png" alt="" class="image-B -mt-24 -ml-8 min-w-[100px] animate-bounce" style="margin-left: -26px;">
+          </div>
+          <div data-aos="zoom-in" data-aos-delay="700" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="800" class="point-blue"></div>
+          <div data-aos="zoom-in" data-aos-delay="900" class="point-blue">
+            <img src="img/img-1.png" alt="" class="-mt-20 -ml-2 min-w-[100px] animate-bounce">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- question -->
+    <section class="flex justify-center px-4" data-aos="fade-up">
+      <!-- content -->
+      <div class="transition cursor-pointer max-w-[1200px] p-4 rounded-2xl lg:-mt-20 mt-10 bg-white shadow-2xl hover:shadow-xl">
+        <!-- title -->
+        <h2 class="text-[#CA0000] font-bold text-[50px] pl-5" id="question-number">QUESTION NO.1</h2>
+        <p class="text-[#FFC41D] font-bold text-[30px] pl-5" id="steps-away">6 STEPS AWAY</p>
+        <p class="text-[36px] mt-10" id="question-text">Lorem Ipsum is simply dummy text of the printing and typesetting a. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s???</p>
+      </div>
+    </section>
+    <!-- answer -->
+    <section class="mx-auto container grid gap-20 lg:grid-cols-2 grid-cols-1 mt-20 px-4 w-fit" id="answers">
+      <button class="btn-answer">ANSWER 1</button>
+      <button class="btn-answer">ANSWER 2</button>
+      <button class="btn-answer">ANSWER 3</button>
+      <button class="btn-answer">ANSWER 4</button>
+    </section>
+    <br>
+    <!-- retired -->
+    <section class="bg-[#3333CB] min-h-[400px] rounded-t-[100px] mt-20 flex justify-center items-center flex-col px-4" id="retired-section">
+      <div class="container mx-auto flex justify-center items-center flex-col">
+        <p class="text-white text-4xl font-bold max-w-[650px] text-center mb-10" id="retired-message">Nyerah ni bos?</p>
+        <a href="failure.html">
+        <button class="text-[46px] font-bold text-white bg-[#FF250D] shadow-2xl transition hover:bg-[#E44C10] hover:text-white px-10 py-4 rounded-2xl" id="retired-button" style="text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);">RETIRED</button>
+      </a>
+      </div>
+    </section>
+  </main>
+  
+  
+ <footer class="bg-white px-10 py-10 flex justify-evenly items-center lg:flex-row flex-col gap-10">
+  <p class="text-3xl font-bold text-black">&#169;copyright, Progress 2023</p>
+  <ul class="text-3xl font-bold flex gap-4 text-black">
+   <li>
+    <a href="index.html" class="hover:text-[#00DDB5]">
+     Home
+    </a>
+   </li>
+   |
+   <li>
+    <a href="index.html#about-us" class="hover:text-[#00DDB5]">
+     About Us
+    </a>
+   </li>
+   |
+   <li>
+    <a href="index.html#contact-us" class="hover:text-[#00DDB5]">
+     Contact Us
+    </a>
+   </li>
+   |
+   <li>
+    <a href="quiz.html" class="hover:text-[#00DDB5]">
+     Play
+    </a>
+   </li>
+  </ul>
+ </footer>
+</body>
+<!-- aos -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  const hamburgerButton = document.getElementById('hamburger-button');
+  const menu = document.getElementById('menu');
+
+  hamburgerButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Hide the menu when a menu item is clicked
+  const menuItems = menu.getElementsByTagName('a');
+  for (let i = 0; i < menuItems.length; i++) {
+    menuItems[i].addEventListener('click', () => {
+      menu.classList.add('hidden');
+    });
+  }
+</script>
+<script>
+  // Quiz data
+  const questions = [
+  {
+    question: "Apa ibukota Indonesia?",
+    choices: ["Jakarta", "Bali", "Surabaya", "Bandung"],
+    correctAnswer: 0, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Pulau di Indonesia yang terkenal dengan satwa liar yang unik dan beragam, termasuk Komodo adalah?",
+    choices: ["Jawa", "Sumatra", "Flores", "Papua"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Agama terbesar di Indonesia adalah?",
+    choices: ["Hindu", "Kristen", "Islam", "Buddha"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Berapakah hasil dari 8 x 4?",
+    choices: ["24", "32", "36", "48"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Maskapai penerbangan nasional Indonesia adalah?",
+    choices: ["Lion Air", "Garuda Indonesia", "AirAsia Indonesia", "Batik Air"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Gunung berapi di Indonesia yang meletus pada tahun 2018 dan menyebabkan tsunami di sekitar Selat Sunda adalah?",
+    choices: ["Gunung Agung", "Gunung Bromo", "Gunung Sinabung", "Anak Krakatau"],
+    correctAnswer: 3, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Selat yang memisahkan pulau Jawa dan Sumatra di Indonesia adalah?",
+    choices: ["Selat Malaka", "Selat Sunda", "Selat Lombok", "Selat Makassar"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Siapakah Presiden Indonesia pertama?",
+    choices: ["Ir.Soekarno", "Soeharto", "Joko Widodo", "Megawati Soekarnoputri"],
+    correctAnswer: 0, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Berapa jumlah hari dalam satu minggu?",
+    choices: ["5", "6", "7", "8"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Provinsi di Indonesia yang terkenal dengan produksi kopi, termasuk kopi 'Kopi Luwak' adalah?",
+    choices: ["Aceh", "Jawa Barat", "Jawa Timur", "Sumatra Barat"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Berapakah hasil dari 5 + 7?",
+    choices: ["10", "11", "12", "13"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Siapakah penulis buku 'Harry Potter'?",
+    choices: ["J.R.R. Tolkien", "J.K. Rowling", "Stephen King", "George R.R. Martin"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Berapakah jumlah planet di tata surya kita?",
+    choices: ["6", "10", "8", "9"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Apa nama benda yang digunakan untuk melihat benda jauh?",
+    choices: ["Kaca mata", "Kompas", "Teleskop", "Mikroskop"],
+    correctAnswer: 2, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Pahlawan nasional Indonesia yang terkenal dalam perjuangan melawan penjajah adalah?",
+    choices: ["Ir.Soekarno", "Gatot Soebroto", "R.A. Kartini", "Tjut Njak Dhien"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Binatang mamalia terbesar di dunia adalah?",
+    choices: ["Gajah", "Singa", "Jerapah", "Paus Biru"],
+    correctAnswer: 3, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Zodiak yang melambangkan seekor kepiting adalah?",
+    choices: ["Aries", "Cancer", "Libra", "Sagittarius"],
+    correctAnswer: 1, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Siapakah penemu bola lampu?",
+    choices: ["Thomas Alva Edison", "Alexander Graham Bell", "Nikola Tesla", "Albert Einstein"],
+    correctAnswer: 0, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Negara terluas di dunia berdasarkan luas wilayah adalah?",
+    choices: ["Rusia", "Kanada", "Amerika Serikat", "China"],
+    correctAnswer: 0, // Index of the correct choice (0-based)
+  },
+  {
+    question: "Apa hasil dari 8 + 5?",
+    choices: ["10", "13", "15", "18"],
+    correctAnswer: 1
+  },
+  {
+    question: "Siapa penulis drama 'Romeo dan Juliet'?",
+    choices: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+    correctAnswer: 1
+  },
+  {
+    question: "Jika semua kucing berwarna hitam, dan kucing Fluffy adalah kucing, maka Fluffy berwarna apa?",
+    choices: ["Hitam", "Putih", "Abu-abu", "Tidak bisa ditentukan"],
+    correctAnswer: 0
+  },
+  {
+    question: "Apa akar kuadrat dari 64?",
+    choices: ["4", "6", "8", "10"],
+    correctAnswer: 2
+  },
+  {
+    question: "Jika angka-angka 3, 7, 9, dan 12 dijumlahkan, berapa hasilnya?",
+    choices: ["18", "27", "31", "32"],
+    correctAnswer: 2
+  },
+  {
+    question: "Negara manakah yang terkenal dengan Menara Eiffel?",
+    choices: ["Spanyol", "Italia", "Prancis", "Jerman"],
+    correctAnswer: 2
+  },
+  {
+    question: "Jika semua burung adalah hewan, dan beberapa hewan memiliki bulu berwarna biru, apakah semua burung memiliki bulu berwarna biru?",
+    choices: ["Ya", "Tidak", "Tidak bisa ditentukan", "Bergantung pada jenis burung"],
+    correctAnswer: 1
+  },
+  {
+    question: "Berapa banyak kaki yang dimiliki seekor kucing?",
+    choices: ["2", "4", "6", "8"],
+    correctAnswer: 1
+  },
+  {
+    question: "Manakah di antara berikut yang merupakan planet terbesar di Tata Surya?",
+    choices: ["Mars", "Jupiter", "Venus", "Saturnus"],
+    correctAnswer: 1
+  },
+];
+
+  // Variables to keep track of game state
+  let currentQuestion = 0;
+  let imageAValue = 0;
+  let imageBValue = 6;
+
+  // Function to update the question and choices
+  function updateQuestion() {
+    const questionData = questions[currentQuestion];
+    $("#question-number").text(`QUESTION NO.${currentQuestion + 1}`);
+    $("#steps-away").text(`${imageBValue - imageAValue} STEPS AWAY`);
+    $("#question-text").text(questionData.question);
+    const $answers = $("#answers").empty();
+    questionData.choices.forEach((choice, index) => {
+      $answers.append(`<button class="btn-answer" data-answer="${index}">${choice}</button>`);
+    });
+    moveImages();
+    $("#steps-away").text(`${Math.abs(imageBValue - imageAValue)} STEPS AWAY`);
+  }
+
+  // Function to handle user's answer
+  // Function to handle user's answer
+function handleAnswer(answer) {
+  const questionData = questions[currentQuestion];
+  if (answer === questionData.correctAnswer) {
+    if (imageAValue + 1 === imageBValue) {
+      // User wins
+      window.location.href = "successful.html";
+    } else {
+      imageAValue++;
+    }
+  } else {
+    // Move this increment inside the else block for incorrect answers only
+    imageBValue++;
+    if (imageBValue === 9) {
+      // User loses
+      window.location.href = "failure.html";
+    }
+  }
+  
+  // Increment currentQuestion to move to the next question, regardless of the user's answer
+  currentQuestion++;
+
+  if (currentQuestion === questions.length) {
+    // User answered all questions correctly
+    window.location.href = "successful.html";
+  } else {
+    updateQuestion(); // Call updateQuestion() to load the next question
+  }
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+
+
+
+   // Function to move the images to the next points
+   function moveImages() {
+    const $imageA = $(".image-A");
+    const $imageB = $(".image-B");
+
+    if (imageAValue > 0 && imageAValue <= 10) {
+    const nextImageAPoint = imageAValue;
+    $imageA.appendTo($(".point-blue").eq(nextImageAPoint));
+  }
+
+  // Move image B when its value changes
+  if (imageBValue >= 7 && imageBValue <= 10) {
+    const nextImageBPoint = imageBValue;
+    $imageB.appendTo($(".point-blue").eq(nextImageBPoint));
+  }
+  }
+  // Event listener for answer buttons
+  $(document).on("click", ".btn-answer", function () {
+    const selectedAnswer = parseInt($(this).attr("data-answer"));
+    handleAnswer(selectedAnswer);
+  });
+
+  // Initial setup
+  shuffleArray(questions); // Shuffle the questions array before displaying them
+  updateQuestion();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+ AOS.init();
+</script>
+
+</html>
