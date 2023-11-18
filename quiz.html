@@ -201,6 +201,12 @@
         e.preventDefault();
     });
 });
+ document.onkeydown = function (e) {
+    if (e.key === "F12") {
+        return false;
+    }
+};
+
 
   const hamburgerButton = document.getElementById('hamburger-button');
   const menu = document.getElementById('menu');
